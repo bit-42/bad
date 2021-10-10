@@ -27,12 +27,14 @@ char *term_help = ""
 "FYI: Everything has a return value except for (exit). Even this command returns 0.\n"
 "For support, please view the README.\n";
 
+char *source = "https://github.com/jessehorne/bad\n";
+
 cvector_vector_type(float) variables_float = NULL;
 TOKENS variables_name = NULL;
 
 /* methods holds all built-in methods */
-char *methods[] = {"help", "exit", "dvar"};
-int method_count = 3;
+char *methods[] = {"help", "exit", "dvar", "source"};
+int method_count = 4;
 
 
 /* token types */
@@ -498,6 +500,8 @@ float eval(TOKENS t)
       // dumb methods
       if (strcmp(t[i], "help") == 0) {
         puts(term_help);
+      } else if (strcmp(t[i], "source") == 0) {
+        puts(source);
       } else if (strcmp(t[i], "exit") == 0) {
         exit(0);
       }

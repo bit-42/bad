@@ -28,7 +28,7 @@ $ git clone badi.git
 $ cd badi/
 $ make
 $ ./bin/badi
-Use (quit) to quit, (tl) to return here after an interrupt.
+Welcome to bad! Try (help) or (source) or (exit).
 bad>
 ```
 
