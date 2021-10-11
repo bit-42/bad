@@ -37,13 +37,15 @@ bad>
 Here's a short tutorial on all the language features. Currently there's not much!
 
 ```lisp
-(+ 1 1)           -> 2
-(- 20 10.5)       -> 9.5
-(* (+ 2 2) 2)     -> 8
-(/ 50 10)         -> 5
-(dvar x 20)       -> 20
-(+ 20 x)          -> 40
-x                 -> 20
+(+ 1 1)               -> 2
+(- 20 10.5)           -> 9.5
+(* (+ 2 2) 2)         -> 8
+(/ 50 10)             -> 5
+(dvar x 20)           -> 20
+(+ 20 x)              -> 40
+x                     -> 20
+(> x 40)              -> 0 (false)
+(+ (>= 1 1) (<= 5 5)) -> 2 (both are true, 1 if one is true, 0 if none)
 ```
 
 # TODO
