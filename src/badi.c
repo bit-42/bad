@@ -11,12 +11,10 @@
 #include "badmath.h"
 
 char *help = ""
-"Usage: badi [file]\n"
+"Usage: badi\n"
 "\n"
 "Examples:\n"
 "  $ badi\n"
-" OR\n"
-"  $ badi hello.bad\n"
 "\n"
 "For support, please view the README.\n";
 
