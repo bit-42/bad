@@ -365,6 +365,10 @@ enum TOKENTYPE token_type(char* t)
 */
 float eval_token_float(char *n)
 {
+  if (n[0] == '(') {
+    return eval(tokenize(n));
+  }
+
   // Check if token is TVAR
   enum TOKENTYPE tt = token_type(n);
 
@@ -537,9 +541,10 @@ float eval(TOKENS t)
           if (strcmp(t[i], "dvar") == 0) {
             // Add variable name to variables_name if doesn't exist
             // otherwise change it (TODO)
-            float var = eval_token_float(t[i+2]);
             char *var_name = (char *)malloc(sizeof(char) * sizeof(t[i+1]));
             strcpy(var_name, t[i+1]);
+
+            float var = eval_token_float(t[i+2]);
 
             cvector_push_back(variables_name, var_name);
             cvector_push_back(variables_float, var);
